@@ -1,8 +1,11 @@
 import React from 'react'
+import AnimatedTextLines from '../components/AnimatedTextLines';
 
 const Hero = () => {
     const contextRef = React.useRef(null);
     const headerRef = React.useRef(null);
+    const aboutText = `Why follow the leader when you can change the game?
+    I'm a Software Developer Ready to save the day.`;
 
     return (
         <section
@@ -23,6 +26,11 @@ const Hero = () => {
                 </div>
                 <div className="relative px-10 text-black">
                     <div className="absolute inset-x-0 border-t-2" />
+                    <div className="py-12 sm:py-16 text-end">
+                        <AnimatedTextLines text={aboutText} className="front-light uppercase value-text-responsive"
+                            
+                        />
+                    </div>
                 </div>
             </div>
         </section>
