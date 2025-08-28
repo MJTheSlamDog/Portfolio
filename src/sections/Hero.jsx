@@ -1,11 +1,22 @@
 import React from 'react'
 import AnimatedTextLines from '../components/AnimatedTextLines';
+import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
 
 const Hero = () => {
     const contextRef = React.useRef(null);
     const headerRef = React.useRef(null);
     const aboutText = `Why follow the leader when you can change the game?
     I'm a Software Developer Ready to save the day.`;
+
+    useGSAP(() => {
+        const tl = gsap.timeline();
+        tl.from(contextRef.current, {
+            y: "50vh",
+            duration: 1,
+            ease: "circ.out",
+        });
+    });
 
     return (
         <section
